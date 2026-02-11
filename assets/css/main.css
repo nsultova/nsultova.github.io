@@ -1,0 +1,486 @@
+/* ==========================================================================
+   1. CSS Custom Properties (Variables)
+   ========================================================================== */
+:root {
+  /* Colors - Dark mode with orange accents */
+  --bg-primary: #17100d;
+  --bg-secondary: #221616;
+  --bg-tertiary: #2d2421;
+  --text-primary: #e6edf3;
+  --text-secondary: #7d8590;
+  --text-tertiary: #585148;
+  --accent-primary: #ff8c42;
+  --accent-hover: #ffb56b;
+  --border-color: #3d3430;
+  --code-bg: #221c16;
+
+  /* Typography */
+  --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+  --font-size-base: 1.125rem;
+  --line-height-base: 1.7;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Layout */
+  --container-max-width: 800px;
+  --border-radius: 6px;
+}
+
+/* ==========================================================================
+   2. CSS Reset & Base Styles
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   3. Typography
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: var(--spacing-lg);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: var(--spacing-md);
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+}
+
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+strong, b {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+em, i {
+  font-style: italic;
+}
+
+/* ==========================================================================
+   4. Layout Components
+   ========================================================================== */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+.site-header {
+  text-align: center;
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--spacing-lg);
+}
+
+.site-title a {
+  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-title a:hover {
+  color: var(--accent-primary);
+}
+
+.site-description {
+  color: var(--text-secondary);
+  margin-top: var(--spacing-xs);
+  font-size: 1rem;
+}
+
+.content {
+  min-height: 60vh;
+}
+
+.site-footer {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   5. Home Page - Post List
+   ========================================================================== */
+.home-intro {
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.posts-section {
+  margin-top: var(--spacing-xl);
+}
+
+.section-title {
+  margin-bottom: var(--spacing-md);
+  color: var(--text-primary);
+  font-size: 1.75rem;
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-item {
+  margin-bottom: var(--spacing-md);
+}
+
+.post-preview {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  transition: all 0.2s ease;
+}
+
+.post-preview:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.post-date {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.post-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.post-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.post-excerpt {
+  color: var(--text-secondary);
+  margin-top: var(--spacing-xs);
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   6. Individual Post Page
+   ========================================================================== */
+.post {
+  max-width: 100%;
+}
+
+.post-header {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-header .post-title {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.post-header .post-date {
+  font-size: 1rem;
+}
+
+.post-content {
+  margin-bottom: var(--spacing-lg);
+}
+
+.post-footer {
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: var(--spacing-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   7. Content Styling
+   ========================================================================== */
+
+/* Code blocks */
+code {
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-sm);
+  overflow-x: auto;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.5;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  margin: var(--spacing-md) 0;
+  border: 1px solid var(--border-color);
+}
+
+/* Lists */
+ul, ol {
+  margin-left: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-sm);
+}
+
+li {
+  margin-bottom: var(--spacing-xs);
+}
+
+.post-content ul,
+.post-content ol,
+.home-intro ul,
+.home-intro ol {
+  margin-top: var(--spacing-xs);
+}
+
+/* Nested lists */
+li > ul,
+li > ol {
+  margin-top: var(--spacing-xs);
+  margin-bottom: 0;
+}
+
+/* Horizontal rules */
+hr {
+  border: none;
+  border-top: 2px solid var(--border-color);
+  margin: var(--spacing-lg) 0;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 3px solid var(--accent-primary);
+  padding-left: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--spacing-md) 0;
+}
+
+th, td {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+th {
+  background-color: var(--bg-secondary);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+td {
+  color: var(--text-primary);
+}
+
+tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* Definition lists */
+dl {
+  margin-bottom: var(--spacing-sm);
+}
+
+dt {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: var(--spacing-xs);
+}
+
+dd {
+  margin-left: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   8. Responsive Design
+   ========================================================================== */
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 1rem;
+    --spacing-xl: 2rem;
+    --spacing-lg: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  .container {
+    padding: var(--spacing-sm);
+  }
+
+  .site-header {
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+  }
+
+  .site-title a {
+    font-size: 1.75rem;
+  }
+
+  .post-header .post-title {
+    font-size: 2rem;
+  }
+
+  .post-preview {
+    padding: var(--spacing-sm);
+  }
+}
+
+/* Tablet and larger */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .container {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container {
+    padding: var(--spacing-lg);
+  }
+
+  .post-preview:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #ffffff;
+    --border-color: #ff8c42;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

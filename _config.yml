@@ -1,6 +1,13 @@
 title: RNDM
 description: Snippets of useful things
-theme: jekyll-theme-minimal
-plugins:
-  - jekyll-theme-minimal
 url: "https://nsultova.github.io"
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+# Exclude from processing
+exclude:
+  - README.md
+  - .git
+  - .gitignore
