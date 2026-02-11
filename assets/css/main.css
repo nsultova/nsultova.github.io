@@ -2,32 +2,30 @@
    1. CSS Custom Properties (Variables)
    ========================================================================== */
 :root {
-  /* Colors - Dark mode with orange accents */
-  --bg-primary: #17100d;
-  --bg-secondary: #221616;
-  --bg-tertiary: #2d2421;
-  --text-primary: #e6edf3;
-  --text-secondary: #7d8590;
-  --text-tertiary: #585148;
-  --accent-primary: #ff8c42;
-  --accent-hover: #ffb56b;
-  --border-color: #3d3430;
-  --code-bg: #221c16;
+  --bg-primary: #0f1419;
+  --bg-secondary: #1a1f26;
+  --bg-tertiary: #242b34;
+  --text-primary: #e4e9f0;
+  --text-secondary: #8b95a7;
+  --text-tertiary: #5a6470;
+  --accent-primary: #ff9966;
+  --accent-hover: #ffb399;
+  --accent-secondary: #4a9b9f;
+  --border-color: #2a3340;
+  --code-bg: #161b22;
 
-  /* Typography */
+ 
   --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
   --font-size-base: 1.125rem;
   --line-height-base: 1.7;
 
-  /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
 
-  /* Layout */
   --container-max-width: 800px;
   --border-radius: 6px;
 }
