@@ -7,5 +7,3 @@ Hey :) Thought I'd share some random useful snippets from my own docs, things th
 
 Sometimes models start behaving like headless chickens lost in the trenches, so despite their usefulness distilling stuff that works into docs is still worthwhile - and less wasteful too.
 
-
-For my official website, see sig2void.com
